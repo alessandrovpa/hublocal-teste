@@ -14,5 +14,9 @@ export const HeaderContainer = styled.header`
       align-items: center;
       gap: 0.5rem;
     }
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+      padding: 0.5rem;
+    }
   }
 `;

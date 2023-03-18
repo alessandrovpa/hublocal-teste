@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components';
 
 export const DashboardContainer = styled.div`
   width: 70%;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 interface DashboardContentProps {

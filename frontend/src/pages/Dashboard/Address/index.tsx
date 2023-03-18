@@ -45,8 +45,6 @@ export function Company() {
         Authorization: `bearer ${token}`,
       },
     });
-    console.log('opa');
-    console.log(response.data.company.addresses);
     setCompany(response.data.company);
   }, [token, id]);
 

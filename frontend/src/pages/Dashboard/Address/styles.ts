@@ -51,6 +51,9 @@ export const CompanyContent = styled.div<CompanyContentProps>`
             justify-content: center;
           `}
   }
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const HeaderTable = styled.div`

@@ -43,4 +43,8 @@ export const ModalBoxContainer = styled(Box)<ModalBoxContainerProps>`
       justify-content: space-between;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;

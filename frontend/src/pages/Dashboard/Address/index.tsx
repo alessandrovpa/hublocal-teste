@@ -100,10 +100,18 @@ export function Company() {
         addresses={company ? company.addresses : undefined}
         updateAddresses={getFullCompany}
       />
-      <ModalDeleteAddress
-        addresses={company && company.addresses}
-        updateAddresses={getFullCompany}
-      />
+      {company && company.addresses && (
+        <ModalDeleteAddress
+          addresses={company.addresses}
+          updateAddresses={getFullCompany}
+        />
+      )}
+      {company && company.addresses && (
+        <ModalDeleteAddress
+          addresses={company && company.addresses}
+          updateAddresses={getFullCompany}
+        />
+      )}
     </CompanyContainer>
   );
 }

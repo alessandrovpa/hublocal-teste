@@ -1,8 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { DescriptionContent, OutletContent, SignContainer } from './styles';
 import BackgroundImage from '../../assets/background-signin.png';
+import { useEffect } from 'react';
 
 export function SignLayout() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('@hublocal-teste:token');
+    if (token) navigate('/dashboard');
+  }, [navigate]);
+
   return (
     <SignContainer>
       <DescriptionContent>

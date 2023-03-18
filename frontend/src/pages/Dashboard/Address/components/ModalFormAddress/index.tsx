@@ -21,6 +21,7 @@ import { toast } from 'react-toastify';
 import { useAddressModal } from '../../../../../hooks/useAddressModal';
 import { useCallback, useEffect } from 'react';
 import formatText from '../../../../../utils/formatText';
+import axios from 'axios';
 
 const addressSchema = z.object({
   name: z.string().nonempty({ message: 'Preencha um nome' }),
@@ -136,6 +137,26 @@ export function ModalFormCompany({
     }
   }
 
+  async function searchCEP() {
+    const input = document.querySelector<HTMLInputElement>('#cep');
+    if (input) {
+      const clearedCep = input.value.replace(/[^0-9]/g, '');
+      if (clearedCep.length === 8) {
+        const response = await axios.get(
+          `https://viacep.com.br/ws/${clearedCep}/json/`
+        );
+        if (!response.data.error) {
+          reset({
+            city: response.data.localidade,
+            neighborhood: response.data.bairro,
+            state: response.data.uf,
+            street: response.data.logradouro,
+          });
+        }
+      }
+    }
+  }
+
   function formatCEP() {
     const item = document.querySelector<HTMLInputElement>('#cep');
     if (item) {
@@ -185,7 +206,9 @@ export function ModalFormCompany({
                 onKeyPress={formatCEP}
                 error={!!errors.cep}
                 helperText={errors.cep && errors.cep.message}
+                onInput={searchCEP}
                 InputProps={{
+                  inputProps: { maxLength: 10 },
                   startAdornment: (
                     <InputAdornment position="start">
                       <Flag />
@@ -267,6 +290,7 @@ export function ModalFormCompany({
                 error={!!errors.state}
                 helperText={errors.state && errors.state.message}
                 InputProps={{
+                  inputProps: { maxLength: 2 },
                   startAdornment: (
                     <InputAdornment position="start">
                       <Public />

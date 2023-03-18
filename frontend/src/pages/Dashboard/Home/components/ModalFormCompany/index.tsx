@@ -177,6 +177,7 @@ export function ModalFormCompany({
                 error={!!errors.cnpj}
                 helperText={errors.cnpj && errors.cnpj.message}
                 InputProps={{
+                  inputProps: { maxLength: 18 },
                   startAdornment: (
                     <InputAdornment position="start">
                       <Business />

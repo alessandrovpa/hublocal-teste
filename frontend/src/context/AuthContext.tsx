@@ -86,10 +86,9 @@ export function AuthContextProvider({ children }: AuthContextProps) {
         }
         setToken(JSON.parse(storedToken));
         setUser(JSON.parse(storedUser));
-        navigate('/dashboard');
       }
     }
-  }, [logout, user, token, navigate]);
+  }, [logout, user, token]);
 
   useEffect(() => {
     verifyTokenAlreadyStored();

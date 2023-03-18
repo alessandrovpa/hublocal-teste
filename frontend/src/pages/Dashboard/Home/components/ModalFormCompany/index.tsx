@@ -86,7 +86,7 @@ export function ModalFormCompany({
             },
           }
         );
-        toast.success('Endereço alterado!');
+        toast.success('Empresa alterada!');
       } else {
         await api.post(
           `/company`,
@@ -101,7 +101,7 @@ export function ModalFormCompany({
             },
           }
         );
-        toast.success('Empresa cadastrado!');
+        toast.success('Empresa cadastrada!');
       }
 
       updateCompanies();

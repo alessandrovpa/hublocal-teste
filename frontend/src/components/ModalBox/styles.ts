@@ -41,6 +41,10 @@ export const ModalBoxContainer = styled(Box)<ModalBoxContainerProps>`
     > div {
       display: flex;
       justify-content: space-between;
+      gap: 1rem;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
     }
   }
 

@@ -37,7 +37,7 @@ export class Company {
       updatedAt,
       ...props,
       name: props.name.replace(/\s+/g, ' ').trim(),
-      website: props.name.replace(/\s+/g, '').trim(),
+      website: props.website.replace(/\s+/g, '').trim(),
     };
   }
 

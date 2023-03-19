@@ -37,6 +37,9 @@ export class PrismaAddressRepository implements AddressRepository {
       where: {
         company_id: companyId,
       },
+      orderBy: {
+        created_at: 'asc',
+      },
     });
 
     const localAddresses = addresses.map((address) =>

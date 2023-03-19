@@ -53,6 +53,9 @@ export class PrismaCompanyRepository implements CompanyRepository {
         user_id: userId,
       },
       include: { addresses: true },
+      orderBy: {
+        created_at: 'asc',
+      },
     });
 
     const localCompanies = companies.map((company) => {

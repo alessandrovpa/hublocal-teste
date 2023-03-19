@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { errorMessages } from '@utils/error-messages';
-import { IsNotEmpty, MinLength } from 'class-validator';
+import { IsNotEmpty, Length, MinLength } from 'class-validator';
 
 export class CreateUpdateAddresDto {
   @ApiProperty({
@@ -53,5 +53,6 @@ export class CreateUpdateAddresDto {
     example: 'CE',
   })
   @IsNotEmpty({ message: errorMessages.stateRequired })
+  @Length(2, 2, { message: errorMessages.stateLength })
   state: string;
 }

@@ -1,11 +1,12 @@
 import { AddressMapper } from '@modules/address/mappers/address.mapper';
+import { stringCapitalize } from '@utils/string-capitalize';
 import { Company } from '../entities/company.entity';
 
 export class CompanyMapper {
   static toHTTP(company: Company) {
     const httpCompany = {
       id: company.id,
-      name: company.name,
+      name: stringCapitalize(company.name),
       cnpj: company.cnpj.replace(
         /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
         '$1.$2.$3/$4-$5',

@@ -35,6 +35,8 @@ export class User {
       updatedAt,
       isAdmin,
       ...props,
+      name: props.name.replace(/\s+/g, ' ').trim(),
+      email: props.email.replace(/\s+/g, '').trim(),
     };
   }
 
@@ -53,7 +55,7 @@ export class User {
     return this.props.name;
   }
   public set name(name: string) {
-    this.props.name = name;
+    this.props.name = name.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 

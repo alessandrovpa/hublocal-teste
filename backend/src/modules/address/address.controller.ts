@@ -23,9 +23,9 @@ import { CreateUpdateAddresDto } from './dtos/create-update-address.dto';
 import { Address } from './entities/address.entity';
 import { AddressMapper } from './mappers/address.mapper';
 import { CreateAddressService } from './services/createAddress/create-address.service';
-import { DeleteAddressService } from './services/deleteAddressService/delete-address.service';
-import { ListAddressesService } from './services/listAddressesService/list-addresses.service';
-import { UpdateAddressService } from './services/updateAddressService/update-address.service';
+import { DeleteAddressService } from './services/deleteAddress/delete-address.service';
+import { ListAddressesService } from './services/listAddresses/list-addresses.service';
+import { UpdateAddressService } from './services/updateAddress/update-address.service';
 
 @UseGuards(JwtAuthGuard)
 @UseInterceptors(IsLoggedUserOwnerOfCompany)

@@ -43,6 +43,11 @@ export class Address {
       createdAt,
       updatedAt,
       ...props,
+      name: props.name.replace(/\s+/g, ' ').trim(),
+      number: props.name.replace(/\s+/g, ' ').trim(),
+      neighborhood: props.neighborhood.replace(/\s+/g, ' ').trim(),
+      city: props.city.replace(/\s+/g, ' ').trim(),
+      state: props.state.replace(/\s+/g, '').trim(),
     };
   }
 
@@ -56,7 +61,7 @@ export class Address {
     return this.props.name;
   }
   public set name(name: string) {
-    this.props.name = name;
+    this.props.name = name.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -74,7 +79,7 @@ export class Address {
     return this.props.street;
   }
   public set street(street: string) {
-    this.props.street = street;
+    this.props.street = street.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -83,7 +88,7 @@ export class Address {
     return this.props.number;
   }
   public set number(number: string) {
-    this.props.number = number;
+    this.props.number = number.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -92,7 +97,7 @@ export class Address {
     return this.props.neighborhood;
   }
   public set neighborhood(neighborhood: string) {
-    this.props.neighborhood = neighborhood;
+    this.props.neighborhood = neighborhood.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -101,7 +106,7 @@ export class Address {
     return this.props.city;
   }
   public set city(city: string) {
-    this.props.city = city;
+    this.props.city = city.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -110,7 +115,7 @@ export class Address {
     return this.props.state;
   }
   public set state(state: string) {
-    this.props.state = state;
+    this.props.state = state.replace(/\s+/g, '').trim();
     this.props.updatedAt = new Date();
   }
 

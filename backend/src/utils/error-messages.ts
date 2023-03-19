@@ -32,6 +32,7 @@ export const errorMessages = {
   cityRequired: 'Campo Cidade obrigatório!',
 
   stateRequired: 'Campo Estado obrigatório!',
+  stateLength: 'Estado deve conter 2 dígitos',
 
   generic: 'Operação inválida',
   unexistentUserId: 'Usuario não encontrado!',

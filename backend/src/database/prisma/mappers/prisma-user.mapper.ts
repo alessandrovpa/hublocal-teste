@@ -5,8 +5,8 @@ export class PrismaUserMapper {
   static toPrisma(user: LocalUser) {
     return {
       id: user.id,
-      name: user.name,
-      email: user.email,
+      name: user.name.toLocaleLowerCase(),
+      email: user.email.toLocaleLowerCase(),
       password: user.password,
       created_at: user.createdAt,
       updated_at: user.updatedAt,

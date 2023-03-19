@@ -5,13 +5,13 @@ export class PrismaAddressMapper {
   static toPrisma(address: LocalAddress): PrismaAddress {
     return {
       id: address.id,
-      name: address.name,
+      name: address.name.toLocaleLowerCase(),
       cep: address.cep,
-      street: address.street,
+      street: address.street.toLocaleLowerCase(),
       number: address.number,
-      neighborhood: address.neighborhood,
-      city: address.city,
-      state: address.state,
+      neighborhood: address.neighborhood.toLocaleLowerCase(),
+      city: address.city.toLocaleLowerCase(),
+      state: address.state.toLocaleLowerCase(),
       company_id: address.companyId,
       created_at: address.createdAt,
       updated_at: address.updatedAt,

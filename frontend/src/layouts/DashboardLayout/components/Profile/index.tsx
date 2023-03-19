@@ -7,7 +7,7 @@ export function Profile() {
   return (
     <ProfileContainer onClick={logout}>
       <AccountCircle />
-      <h2>{user.name}</h2>
+      <h2>{user.name.split(' ')[0]}</h2>
       <Logout />
     </ProfileContainer>
   );

@@ -5,10 +5,10 @@ export class PrismaCompanyMapper {
   static toPrisma(company: LocalCompany): PrismaCompany {
     return {
       id: company.id,
-      name: company.name,
+      name: company.name.toLocaleLowerCase(),
       cnpj: company.cnpj,
       user_id: company.userId,
-      website: company.website,
+      website: company.website.toLocaleLowerCase(),
       created_at: company.createdAt,
       updated_at: company.updatedAt,
     };

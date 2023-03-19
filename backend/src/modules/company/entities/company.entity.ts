@@ -36,6 +36,8 @@ export class Company {
       createdAt,
       updatedAt,
       ...props,
+      name: props.name.replace(/\s+/g, ' ').trim(),
+      website: props.name.replace(/\s+/g, '').trim(),
     };
   }
 
@@ -49,7 +51,7 @@ export class Company {
     return this.props.name;
   }
   public set name(name: string) {
-    this.props.name = name;
+    this.props.name = name.replace(/\s+/g, ' ').trim();
     this.props.updatedAt = new Date();
   }
 
@@ -58,7 +60,7 @@ export class Company {
     return this.props.website;
   }
   public set website(website: string) {
-    this.props.website = website;
+    this.props.website = website.replace(/\s+/g, '').trim();
     this.props.updatedAt = new Date();
   }
 

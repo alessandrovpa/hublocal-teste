@@ -7,7 +7,7 @@ Esta aplicação foi desenvolvida para realizar o teste de Desenolvedor FullStac
 
 # Sobre o BackEnd
 
-Esta aplicação é um backend criado com NestJS como ferramenta principal e várias bibliotecas e ferramentas para construir uma API eficiente e segura. A aplicação utiliza o Prisma como ORM para interagir com o banco de dados PostgreSQL. Além disso, utiliza JWT para autenticação dos usuários e class-validator para a validação dos campos recebidos nas rotas. A documentação da API é feita através do Swagger.
+Esta aplicação é um backend criado com NestJS como ferramenta principal e várias bibliotecas e ferramentas para construir uma API eficiente e segura. A aplicação utiliza o Prisma como ORM para interagir com o banco de dados PostgreSQL. Além disso, utiliza JWT para autenticação dos usuários e class-validator para a validação dos campos recebidos nas rotas. A documentação da API é feita através do Swagger e os testes são feitos utilizando o JEST.
 
 ### O BackEnd está disponível em https://hublocal-teste-api.onrender.com/docs
 
@@ -32,6 +32,7 @@ Para executar a aplicação localmente, você precisará ter o Node.js e o Postg
 - JWT
 - class-validator
 - Swagger
+- JEST
 
 # Sobre o FrontEnd
 

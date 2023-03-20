@@ -11,7 +11,7 @@ export class CreateUserService {
 
   async execute(user: CreateUserDto): Promise<User> {
     const verifyEmailAlreadyUser = await this.userRepository.findUserByEmail(
-      user.email.replace(/\s+/g, '').trim(),
+      user.email,
     );
     if (verifyEmailAlreadyUser) {
       throw new HttpException(

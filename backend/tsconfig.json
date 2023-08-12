@@ -19,10 +19,10 @@
     "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
     "paths": {
-      "@database/*": ["./src/database/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@test/*": ["./test/*"]
+      "@domain/*": ["./src/domain/*"],
+      "@application/*": ["./src/application/*"],
+      "@infra/*": ["./src/infra/*"],
+      "@common/*": ["./src/common/*"]
     }
   }
 }

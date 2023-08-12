@@ -1,8 +1,9 @@
 import { ValidationPipe } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { SwaggerModule } from '@nestjs/swagger';
-import { AppModule } from './app.module';
-import { swaggerConfig } from './config/swagger';
+import { AppModule } from '@infra/nestjs/modules/app.module';
+import { swaggerConfig } from '@infra/nestjs/config/swagger';
+import { GlobalExceptionHandler } from '@infra/nestjs/modules/errors/global-error-handler';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,6 +15,8 @@ async function bootstrap() {
       stopAtFirstError: true,
     }),
   );
+
+  app.useGlobalFilters(new GlobalExceptionHandler(app.get(HttpAdapterHost)));
 
   app.enableCors();
 
